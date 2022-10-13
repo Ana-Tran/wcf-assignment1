@@ -14,7 +14,7 @@ namespace MenuOptions
     {
 
         [OperationContract]
-        int PrimeNumber(int num);
+        bool PrimeNumber(int num);
 
         [OperationContract]
         int SumOfDigits(int num);
@@ -23,7 +23,7 @@ namespace MenuOptions
         string ReverseString (string str);
 
         [OperationContract]
-        string PrintHTMLTAGs(string tag);
+        string PrintHTMLTAGs(string tag, int data);
 
         [OperationContract]
         string SortNumbers(string sort, string data);
