@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,11 +9,12 @@ namespace ConsoleMenu
 {
     internal class Program
     {
+        private static string SIX = "6";
         static void Main(string[] args)
         {
             string userchoice = "";
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            while (!userchoice.Equals("6"))
+            while (!userchoice.Equals(SIX))
             {
                 Console.WriteLine("1. Prime number\r\n2. Sum of digits\r\n3. Reverse a string\r\n4. Print HTML tags\r\n5. Sort 5 numbers\r\n6. Exit\r\n \r\rEnter your choice ");
                 userchoice = Console.ReadLine();
