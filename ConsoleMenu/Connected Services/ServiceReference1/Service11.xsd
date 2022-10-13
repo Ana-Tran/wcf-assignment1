@@ -10,7 +10,7 @@
   <xs:element name="PrimeNumberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="PrimeNumberResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="PrimeNumberResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,7 +46,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="tag" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="data" type="xs:int" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -12,16 +12,16 @@ namespace MenuOptions
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public bool PrimeNumber(int num)
+        public string PrimeNumber(int num)
         {
             if (num % 2 == 0)
             {
-                return false;
+                return "not prime number";
             }
-            return true;
+            return "prime number";
         }
 
-        public string PrintHTMLTAGs(string tag, int data)
+        public string PrintHTMLTAGs(string tag, string data)
         {
             return $"<{tag}> {data} </{tag}>";
         }
@@ -37,20 +37,20 @@ namespace MenuOptions
         {
             string str = "";
             List<string> numbers = data.Split(',').ToList();
-            if (sort == "descending")
+            if (sort.Equals("descending"))
             {
-                foreach (string digits in numbers)
+                numbers.Sort((a, b) => b.CompareTo(a));
+                foreach (string num in numbers)
                 {
-                    digits.OrderByDescending(i => i);
-                    str = string.Join(",", digits);
+                    str += string.Join(",", num);
                 }
             }
             else
             {
-                foreach (string digits in numbers)
+                numbers.Sort((a, b) => a.CompareTo(b));
+                foreach (string num in numbers)
                 {
-                    digits.OrderBy(i => i);
-                    str = string.Join(",", digits);
+                    str += string.Join(",", num);
                 }
             }
             return str;

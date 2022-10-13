@@ -16,10 +16,10 @@ namespace ConsoleMenu.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrimeNumber", ReplyAction="http://tempuri.org/IService1/PrimeNumberResponse")]
-        bool PrimeNumber(int num);
+        string PrimeNumber(int num);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrimeNumber", ReplyAction="http://tempuri.org/IService1/PrimeNumberResponse")]
-        System.Threading.Tasks.Task<bool> PrimeNumberAsync(int num);
+        System.Threading.Tasks.Task<string> PrimeNumberAsync(int num);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SumOfDigits", ReplyAction="http://tempuri.org/IService1/SumOfDigitsResponse")]
         int SumOfDigits(int num);
@@ -34,10 +34,10 @@ namespace ConsoleMenu.ServiceReference1 {
         System.Threading.Tasks.Task<string> ReverseStringAsync(string str);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrintHTMLTAGs", ReplyAction="http://tempuri.org/IService1/PrintHTMLTAGsResponse")]
-        string PrintHTMLTAGs(string tag, int data);
+        string PrintHTMLTAGs(string tag, string data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrintHTMLTAGs", ReplyAction="http://tempuri.org/IService1/PrintHTMLTAGsResponse")]
-        System.Threading.Tasks.Task<string> PrintHTMLTAGsAsync(string tag, int data);
+        System.Threading.Tasks.Task<string> PrintHTMLTAGsAsync(string tag, string data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortNumbers", ReplyAction="http://tempuri.org/IService1/SortNumbersResponse")]
         string SortNumbers(string sort, string data);
@@ -73,11 +73,11 @@ namespace ConsoleMenu.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public bool PrimeNumber(int num) {
+        public string PrimeNumber(int num) {
             return base.Channel.PrimeNumber(num);
         }
         
-        public System.Threading.Tasks.Task<bool> PrimeNumberAsync(int num) {
+        public System.Threading.Tasks.Task<string> PrimeNumberAsync(int num) {
             return base.Channel.PrimeNumberAsync(num);
         }
         
@@ -97,11 +97,11 @@ namespace ConsoleMenu.ServiceReference1 {
             return base.Channel.ReverseStringAsync(str);
         }
         
-        public string PrintHTMLTAGs(string tag, int data) {
+        public string PrintHTMLTAGs(string tag, string data) {
             return base.Channel.PrintHTMLTAGs(tag, data);
         }
         
-        public System.Threading.Tasks.Task<string> PrintHTMLTAGsAsync(string tag, int data) {
+        public System.Threading.Tasks.Task<string> PrintHTMLTAGsAsync(string tag, string data) {
             return base.Channel.PrintHTMLTAGsAsync(tag, data);
         }
         
